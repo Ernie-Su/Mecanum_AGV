@@ -4,8 +4,17 @@
 ![Button Configuration](https://github.com/Ernie-Su/Ardentec_AGV/blob/main/img/joystick.PNG)
 
 # move_robot
+## move_robot流程
+
+```All_dir.h```裡面有個```timercallback()```，他會判斷現在是否為搖桿控制，是的話就是手動遙控，如果不是的話就是自動模式，會呼叫```State_Machine()```判斷```P_STATE```。
+
+當狀態是```P_STATE_MOVE```的時候會呼叫```Navigation_move()```，進入```Trajectory_Tracking()```裡面的```Tracking_Trajectory()```。
+
+當狀態是```P_STATE_MISSON```的時候會呼叫```Misson_state()```，裡面會判斷```MISSON_TYPE```去作出相應的動作。
+
 ## All_dir.h
 ### Flow explanation
+
 We're using omni mode in this AGV project, so just focus on ```elif``` part in car model switch.
 1. Everything starts from ```Trajectory_Tracking()```.
 2. The first entry point is ```Tracking_Trajectory()``` in ```Trajectory_Tracking()```.
@@ -17,6 +26,8 @@ We're using omni mode in this AGV project, so just focus on ```elif``` part in c
 
 ### Important variables
 Navigation's accuracy control : ```dis_error``` and ```angular_error```
+
+Velocity PID Control : ```v_kp = 0.2```, ```v_kd = 0.03```, ```v_ki = 0.07```, Maybe ```v_kp``` and ```v_ki``` need to adjust.
 
 
 ## move_robot.h
