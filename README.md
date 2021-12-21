@@ -5,11 +5,11 @@
 ### These contents were backuped at 12/20/2021, documented by Yu-An, Su.
 
 ### 1. AGV_ws
-Function : Motion Control, SICK LiDAR SLAM.
+Function : Mission Navigation, Motion Control, SICK LiDAR SLAM.
 ### 2. Two_Hokuyo_ws
-Function : Merge two scan topic
+Function : Merge two scan topic(ira_laser_merger)
 ### 3. Obs_Detector_ws
-Function : LiDAR obstacle detection, obstacle publish
+Function : LiDAR obstacle detection(Wall, Fence), obstacle publish
 ### 4. Dispatch_ws
 Function : Receive dispatch packets from HMI and C# server.
 ### 5. Mecanum_Kinematic_1214
