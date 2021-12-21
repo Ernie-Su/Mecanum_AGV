@@ -1,3 +1,8 @@
+# Joystick Control
+## Button Configuration
+
+![Button Configuration](https://github.com/Ernie-Su/Ardentec_AGV/blob/main/img/joystick.PNG)
+
 # move_robot
 ## All_dir.h
 ### Flow explanation
