@@ -87,10 +87,25 @@ source()
 pyautogui.typewrite('roslaunch hector_slam_launch tutorial.launch')
 pyautogui.hotkey('\n')
 
-#create udp_send.py window
-pyautogui.hotkey('ctrl', 'alt', 't')
-time.sleep(0.5)
+# create LegDetect tab
+new_tab()
 
+pyautogui.typewrite('cd ~/Obs_Detector_ws')
+pyautogui.hotkey('\n')
 
+source()
 
+pyautogui.typewrite('rosrun obstacle_detector obstacle_extractor_node')
+pyautogui.hotkey('\n')
+
+# create LegDetect tab
+new_tab()
+
+pyautogui.typewrite('cd ~/Obs_Detector_ws')
+pyautogui.hotkey('\n')
+
+source()
+
+pyautogui.typewrite('rosrun obstacle_detector LegDetect_node')
+pyautogui.hotkey('\n')
 
