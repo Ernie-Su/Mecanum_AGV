@@ -35,18 +35,29 @@ Velocity PID Control : ```v_kp = 0.2```, ```v_kd = 0.03```, ```v_ki = 0.07```, M
 ```State_Machine()``` is the most important part because it controls the whole navigation. It is called in ```timerCallback()``` of ```AllDir.h```, and it calls ```Misson_state()``` for mission control. Namely, **state controls type**.
 The most seen states are 2 (```P_STATE_MOVE```) and 1 (```P_STATE_MISSON```). When AGV is loading and unloading, state changes to ```P_STATE_MISSON```, and changes back to ```P_STATE_MOVE``` after the mission is finished.
 
-### Important variables
+### Important variables 
+#### (Updated by Yu-An Su, 2022/03/31 )
 
-#### 1. state
-```P_STATE_MISSON : 1```
-```P_STATE_MOVE : 2```
-```P_STATE_TIME_DELAY : 10```
+#### 1. p_state
+
+p_state               | number
+--------------------- | ------
+P_STATE_MISSON        | 1
+P_STATE_MOVE          | 2
+P_STATE_TIME_DELAY    | 10
+P_STATE_CENTER_LOCATE | 12
 
 #### 2. type
-```MISSON_Loading_Interrupt : 4```
-```MISSON_unLoading_Interrupt : 6```
-```BatteryCharge_Start : 20```
-```BatteryCharge_stop : 21```
+
+type                        | number
+--------------------------- | ------
+MISSON_Loading_Time         | 3
+MISSON_Loading_Interrupt    | 4
+MISSON_unLoading_Interrupt  | 6
+MISSON_Charge               | 20
+MISSON_Uncharge             | 21
+MISSON_Center_Locate        | 22
+MISSON_SleepWall            | 23
 
 ***
 
