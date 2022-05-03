@@ -80,17 +80,6 @@ source()
 pyautogui.typewrite('rosrun AnhungControl AnhungControl 192.168.43.146 9930')
 pyautogui.hotkey('\n')
 
-# create hector_slam tab
-new_tab()
-
-pyautogui.typewrite('cd ~/AGV_ws')
-pyautogui.hotkey('\n')
-
-source()
-
-pyautogui.typewrite('roslaunch hector_slam_launch tutorial.launch')
-pyautogui.hotkey('\n')
-
 # create LegDetect tab
 new_tab()
 
@@ -113,16 +102,24 @@ source()
 pyautogui.typewrite('rosrun obstacle_detector LegDetect_node')
 pyautogui.hotkey('\n')
 
-# create Dispatch window
-new_window()
+# create Dispatch tab
+new_tab()
 
 pyautogui.typewrite('cd ~/Dispatch_ws')
 pyautogui.hotkey('\n')
 
 source()
 
-pyautogui.typewrite('cd ~/Dispatch_ws/src/subscriber/src')
+pyautogui.typewrite('rosrun subscriber agvDispatch.py')
 pyautogui.hotkey('\n')
 
-pyautogui.hotkey('python subscribe_try.py')
+# create hector_slam tab
+new_tab()
+
+pyautogui.typewrite('cd ~/AGV_ws')
+pyautogui.hotkey('\n')
+
+source()
+
+pyautogui.typewrite('roslaunch hector_slam_launch tutorial.launch')
 pyautogui.hotkey('\n')
