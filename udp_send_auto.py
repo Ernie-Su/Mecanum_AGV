@@ -4,7 +4,8 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 PORT = 9930
 network = "127.0.0.1"
 
-with open('./missionGUI/mission.txt') as f:
+missionPath = '/home/user/Dispatch_ws/missionPath/mission_A.txt'
+with open(missionPath) as f:
     lines = f.readlines()
 
 s.sendto(lines[0].encode('utf-8'), (network, PORT))
